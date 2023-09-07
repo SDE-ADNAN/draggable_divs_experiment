@@ -1,5 +1,6 @@
 // DroppableContainer.js
 import React, { useState } from 'react';
+import DraggableItem from './DraggableItem';
 
 const DroppableContainer = () => {
   const [droppedItems, setDroppedItems] = useState([]);
@@ -25,10 +26,12 @@ const DroppableContainer = () => {
         padding: '20px',
       }}
     >
-      Drop here
+      <h2>Drop Here</h2>
       <div>
         {droppedItems.map((itemName, index) => (
-          <div key={index}>{itemName}</div>
+          <div key={index} style={{ margin: '5px' }}>
+            <DraggableItem name={itemName} />
+          </div>
         ))}
       </div>
     </div>

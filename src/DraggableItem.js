@@ -19,14 +19,20 @@ const DraggableItem = ({ name }) => {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       style={{
-        width: '100px',
-        height: '50px',
-        backgroundColor: isDragging ? 'lightgray' : 'lightblue',
-        margin: '10px',
+        opacity: isDragging ? 0.5 : 1,
         cursor: 'grab',
       }}
     >
-      {name}
+      <div
+        style={{
+          width: '100px',
+          height: '50px',
+          backgroundColor: 'lightblue',
+          margin: '10px',
+        }}
+      >
+        {name}
+      </div>
     </div>
   );
 };
